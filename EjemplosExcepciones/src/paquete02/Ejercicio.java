@@ -18,36 +18,35 @@ public class Ejercicio {
     public static void main(String[] args) {
         int val = valor_1();
         int val_2 = valor_1();
-
+        int suma=sum(val,val_2);
+        imprimir(val,val_2,suma);
     }
 
     public static int valor_1() {
+        int valor=0;
         boolean bandera = true;
-
-        while (bandera) {
-            try {
+        try {
+            
+            while (bandera) {
                 Scanner entrada = new Scanner(System.in);
-                System.out.println("Ingrese valor 1:");
-                int valor1 = entrada.nextInt(); // se espera un valor entero 
-                System.out.println("Ingrese valor 2:");
-                int valor2 = entrada.nextInt(); // se espera un valor entero // 0
-                int resultado = valor1 / valor2;
-
-                System.out.printf("Resultado %d\n", resultado);
+                System.out.println("Ingrese valor:");
+                valor = entrada.nextInt();
+                if (valor < 0 || valor % 2 == 1) {
+                    throw new Exception("valor invalido");
+                }
                 bandera = false;
-                /* se le pedira al  usuario ingrese valores validos que son 2
-                valores enteros, si ingresa otra cosa el coodigo volvera a pedir
-                los valores*/
-            } catch (InputMismatchException inputMismatchException) {
-
-                System.out.printf("Existe un error de tipo %s\n",
-                        inputMismatchException);
-            } catch (ArithmeticException arithmeticException) {
-
-                System.out.println("Lo sentimos hay un error");
-                System.out.printf("De tipo %s\n", arithmeticException);
-
             }
+        } catch (Exception e) {
+            System.out.printf("Lo sentimos hay un error del tipo %s\n",e);
         }
-
+        return valor;
     }
+    public static int sum(int a , int b){
+        int suma= a+b;
+        return suma;
+    }
+     public static void imprimir(int a, int b, int c){
+         System.out.printf("se han ingresado los valores de %s y %s, cuya suma "
+                 + "es: %s",a,b,c);
+     }
+}
