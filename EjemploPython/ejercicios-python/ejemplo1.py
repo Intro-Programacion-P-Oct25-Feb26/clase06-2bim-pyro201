@@ -11,9 +11,9 @@
 """
 
 valor = 10
-valor2 = 0
+valor2 = 1
 
 resultado = valor/valor2
-print("El resultado es " % resultado)
+print("El resultado es ",  resultado)
 
 

@@ -28,6 +28,9 @@ public class Ejemplo051 {
 
                 System.out.printf("Resultado %d\n", resultado);
                 bandera = false;
+                /* se le pedira al  usuario ingrese valores validos que son 2
+                valores enteros, si ingresa otra cosa el coodigo volvera a pedir
+                los valores*/
             } catch (InputMismatchException inputMismatchException) {
 
                 System.out.printf("Existe un error de tipo %s\n",
